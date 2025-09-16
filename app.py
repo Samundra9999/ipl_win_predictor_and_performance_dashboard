@@ -136,10 +136,5 @@ with tab2:
                 color='batsman_runs', 
                 color_discrete_map=colors,
                 hole=0.4)
-
             fig.update_layout(title="Run Distribution")
-            st.plotly_chart(fig)      
-
-
-
-
+            st.plotly_chart(fig)
