@@ -25,18 +25,18 @@ A web application to **predict IPL match winners** and **compare batter & bowler
 
 ## 🚀 Installation
 
-1. #Clone the repository#:
+1. **Clone the repository**:
 
-git clone https://github.com/your-username/ipl-win-prediction.git
+     - git clone https://github.com/your-username/ipl-win-prediction.git
 
-2. #Install dependencies#:
+2. **Install dependencies**:
 
-pip install -r requirements.txt
+     - pip install -r requirements.txt
 
 
-3. #Run the Streamlit app#:
+3. **Run the Streamlit app**:
 
-streamlit run app.py
+    - streamlit run app.py
 
 ---
 
@@ -68,6 +68,7 @@ Charts and results are interactive and update automatically based on selections.
 ## **Datasets**
 
  - The dataset is sourced from kaggle deliveries.csv and match.csv containing historical IPL match deliveries.
+
 
 
 
