@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import pickle
 import streamlit as st
 import sklearn
@@ -142,4 +141,5 @@ with tab2:
 
             fig.update_layout(title="Run Distribution")
             st.plotly_chart(fig)      
+
 
