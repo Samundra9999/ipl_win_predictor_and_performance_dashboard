@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import pickle
 import streamlit as st
-import sklearn
 import plotly.graph_objects as go
 import plotly.express as px
 
@@ -141,5 +140,6 @@ with tab2:
 
             fig.update_layout(title="Run Distribution")
             st.plotly_chart(fig)      
+
 
 
