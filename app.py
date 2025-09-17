@@ -3,7 +3,8 @@ import numpy as np
 import pickle
 import streamlit as st
 import plotly.express as px
-
+import os
+import requests
 
 st.markdown("""
     <style>
@@ -98,8 +99,22 @@ with tab1:
 
         
 with tab2:
-    st.title('Player Status')
-    df = pd.read_csv('https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020?select=deliveries.csv')
+    st.title('Player Status')   
+    url = "https://drive.google.com/uc?id=1LmDd7_zb_dMlxKfBYxf1GAISyZbVA4kS"
+    local_path = "data/deliveries.csv"
+
+    if not os.path.exists(local_path):
+        response = requests.get(url)
+        if response.status_code == 200:
+            os.makedirs(os.path.dirname(local_path), exist_ok=True)
+            with open(local_path, 'wb') as f:
+                f.write(response.content)
+        else:
+            print(f"Failed to download file, status code: {response.status_code}")
+    else:
+        print("File already exists.")
+
+    df = pd.read_csv(local_path)    
     Batter = df['batter'].unique().tolist()
     Bowler = df['bowler'].unique().tolist()
 
@@ -138,3 +153,4 @@ with tab2:
                 hole=0.4)
             fig.update_layout(title="Run Distribution")
             st.plotly_chart(fig)
+            
