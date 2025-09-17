@@ -99,7 +99,7 @@ with tab1:
         
 with tab2:
     st.title('Player Status')
-    df = pd.read_csv('deliveries.csv')
+    df = pd.read_csv('https://www.kaggle.com/datasets/patrickb1912/ipl-complete-dataset-20082020?select=deliveries.csv')
     Batter = df['batter'].unique().tolist()
     Bowler = df['bowler'].unique().tolist()
 
